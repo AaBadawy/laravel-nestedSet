@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::resource('category' , 'CategoriesController');
+Route::resource('team' , 'TeamsController');
+Route::get('leader-teams/{leader_id}' , 'TeamsController@TeamsForLeader');

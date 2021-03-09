@@ -40,4 +40,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function scopeLeaders($query)
+    {
+        return $query->where('type', 'leader');
+    }
+    public function scopeMembers($query)
+    {
+        return $query->where('type', 'member');
+    }
+    public function scopeOwners($query)
+    {
+        return $query->where('type', 'owner');
+    }
 }
